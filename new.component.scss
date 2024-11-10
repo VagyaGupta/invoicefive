@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0277bd;
+    
+    padding: 15px;
+    border-radius: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar h2 {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #0288d1;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    // background-color: #ddd;
+    background-image: url('https://img.freepik.com/free-photo/office-with-documents-money-accounts_144627-33570.jpg?t=st=1731264011~exp=1731267611~hmac=f714c807c6fe8ff928868ad9b005b5a0152ea18959671b02ee6c07be9943ca4e&w=996');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 12px;
+    background:#eee;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    color: #333;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+    border-color: #0288d1;
+    outline: none;
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+span {
+    color: #d32f2f;
+    font-size: 0.875em;
+    display: block;
+    margin-top: 5px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0277bd;
+}
+
+button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+th {
+    color: #333;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+
+td input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+td button {
+    background-color: #0288d1;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #0277bd;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #0288d1;
+    color: white;
+    font-size: 1.5em;
+    width: 100%;
+    padding: 10px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+// /* Responsive adjustments */
+// @media (max-width: 768px) {
+//     .container {
+//         padding: 15px;
+//     }
+
+//     form {
+//         padding: 20px;
+//     }
+
+//     .footer {
+//         padding: 10px;
+//     }
+
+//     .form-navigation button {
+//         font-size: 1em;
+//         padding: 10px 15px;
+//     }
+// }
+
+
+
+
+@media (max-width: 480px) {
+    .navbar h2 {
+        font-size: 1.2em;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    .footer {
+        padding: 10px;
+    }
+
+    .form-navigation button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto; 
+    }
+
+    .table-wrapper table {
+        font-size: 0.8em; 
+    }
+
+    th, td {
+        padding: 8px; 
+    }
+
+    td button {
+        font-size: 0.8em; 
+        padding: 5px 10px; 
+    }
+}
+
+

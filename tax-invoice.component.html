@@ -1,0 +1,212 @@
+
+<div class="taxinvoice">
+
+    <nav class="navbar">
+        <div class="navbar-left">
+          <img src="path/to/logo.png" alt="Website Logo" class="logo">
+        </div>
+        <div class="navbar-center">
+          <h2>Invoice Management System</h2>
+        </div>
+        <div class="navbar-right">
+          <ul class="navbar-tabs">
+            <li><a href="#">Company</a></li>
+            <li><a href="#">Vendor</a></li>
+            <li><a href="#">Invoice</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="header">
+        <img [src]="companyObj.logo" alt="Company Logo">
+        <h1>Tax Invoice</h1>
+    </div>
+    
+    <div class="details">
+    
+    <div class="companyDetails"> 
+        <strong>Company Details</strong>
+        <p>Company Name : <span> {{companyObj.companyName}}</span></p>
+        <p>Company PAN : <span>{{companyObj.companyPAN}} </span></p>
+        <p>E-mail : <span> {{companyObj.email}}</span></p>
+        <p>Address : <span> {{companyObj.companyAddress}}</span></p>
+        <p>Contact : <span> {{companyObj.contact}}</span></p>
+    </div>
+        <div class="vendorDetails">
+           <strong>Vendor Details</strong>
+            <p>Buyer Name : <span>{{vendorObj.vendorName}} </span></p>
+            <p>E-mail : <span>{{vendorObj.email}} </span></p>
+            <p>Address : <span> {{vendorObj.address}}</span></p>
+            <p>Contact : <span> {{vendorObj.contact}}</span></p>
+        
+        </div>
+    </div>
+    
+
+    <div *ngFor="let inv of invoice; let i = index" class="invoice-details">
+        <div class="details">
+          <strong>Invoice Details</strong>
+        </div>
+        <div class="number"> 
+          <p>Invoice No. : <span>{{inv.invoiceNumber}}</span></p>
+          <p>Reference No: <span>{{inv.referenceNumber}}</span></p>
+          <p>Delivery Date : <span>{{inv.deliveryDate}}</span></p>
+        </div>
+        <div class="dates">
+          <p>Invoice Date : <span>{{inv.invoiceDate}}</span></p>
+          <p>Payment due date : <span>{{inv.paymentDueDate}}</span></p>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <!-- <div class="invoice-details">
+    <div class="details"><strong>Invoice Details</strong></div>
+    <div class="number"> 
+        <p>Invoice No. : <span> {{invoice.invoiceNumber}}</span></p>
+        <p>Reference No: <span> {{invoice.referenceNumber}}</span></p>
+        <p>Delivery Date : <span> {{invoice.deliveryDate}}</span></p>
+        
+    </div>
+    <div class="dates">
+        <p>Invoice Date : <span> {{invoice.invoiceDate}}</span></p>
+        <p>Payment due date : <span> {{invoice.paymentDueDate}}</span></p>
+      
+    </div>
+    </div>  -->
+    
+    
+    
+    <div class="Invoicetable">
+        <table>
+            <thead>
+                <th>Sr.No.</th>
+                <th>Item Name</th>
+                <th>HSN/SAC</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>GST</th>
+                <th>Amount</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of invoice; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{item.items[0]?.name}}</td>
+                    <td>{{item.items[0]?.hsn}}</td>
+                    <td>{{item.items[0]?.quantity}}</td>
+                    <td>{{item.items[0]?.rate}}</td>
+                    <td>{{item.items[0]?.gst}}</td>
+                    <td>{{item.items[0]?.amount}}</td>
+                  </tr>
+
+
+
+
+
+            <!-- <tr *ngFor="let item of invoice;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{item.particulars}}</td>
+                <td>{{item.hsnsac}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.rate}}</td>
+                <td>{{item.gst}}</td>
+                <td>{{item.amount}}</td>
+               
+            </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <div class="amount">
+        <p>Amount Chargeable(in words) <span></span></p> 
+    </div>
+    
+    <div class="amounttable">
+    <table>
+        <tr>
+            <th>HSN/SAC</th>
+            <th>Taxable Value</th>
+            <th colspan="2">CGST
+            <th colspan="2">SGST/UTGST
+            <th>Total Tax Amount</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Rate</th>
+            <th>Amount</th>
+            <th>Rate</th>
+            <th>Amount</th>
+            <th></th>
+            
+            </tr>
+            <tr *ngFor="let item of invoice">
+                
+                <td>{{item.hsnsac}}</td>
+                <td>-</td>
+                <td>9%</td>
+                <td>0</td>
+                <td>9%</td>
+                <td>0</td>
+                <td>0.00</td>
+          
+            </tr>
+            <tr>
+                <th>Total</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>0</th>
+            </tr>
+    </table>
+    </div>
+    <div class="bankDetails">
+        <strong>Bank Details</strong>
+        <p>Bank Name : <span> {{bankObj.bankName}}</span></p>
+        <p>Bank Account Number : <span> {{bankObj.bankAccountNumber}}</span></p>
+        <p>IFSC Code: <span> {{bankObj.ifscCode}}</span></p>
+        <p>Account Holders Name : <span> {{bankObj.accountHolderName}}</span></p>
+        
+    </div>
+    
+    <!-- <div class="edit"> <input type="button" value="Edit"></div> -->
+    
+
+    <div class="footer">
+        <p>&copy; 2024 Invoice Management App. All rights reserved.</p>
+    </div> 
+
+
+    </div>
+    

@@ -1,0 +1,94 @@
+{
+  "invoices": [
+    {
+      "id": "1a23",
+      "invoiceNumber": "123",
+      "invoiceDate": "2024-11-04",
+      "paymentDueDate": "2024-11-11",
+      "referenceNumber": "123-456",
+      "referenceDate": "2024-11-18",
+      "deliveryDate": null,
+      "shipTo": "Karnataka",
+      "invoiceAmount": null,
+      "gst": 8,
+      "sgst": null,
+      "cgst": null,
+      "igst": null,
+      "items": [
+        {
+          "name": "watch",
+          "description": "good",
+          "quantity": 2,
+          "rate": 1000,
+          "amount": 2000
+        }
+      ]
+    },
+    {
+      "id": "7d7c",
+      "invoiceNumber": "123",
+      "invoiceDate": "2024-11-18",
+      "paymentDueDate": "2024-10-31",
+      "referenceNumber": "12-98",
+      "referenceDate": null,
+      "deliveryDate": null,
+      "shipTo": null,
+      "invoiceAmount": null,
+      "gst": 10,
+      "sgst": null,
+      "cgst": null,
+      "igst": null,
+      "items": [
+        {
+          "name": "book",
+          "quantity": 1,
+          "rate": 200,
+          "amount": 200
+        }
+      ]
+    },
+    {
+      "id": "081c",
+      "invoiceNumber": "123",
+      "invoiceDate": "2024-11-12",
+      "paymentDueDate": "2024-11-13",
+      "referenceNumber": "1234",
+      "referenceDate": "2024-11-05",
+      "deliveryDate": null,
+      "shipTo": null,
+      "invoiceAmount": null,
+      "gst": 23,
+      "sgst": null,
+      "cgst": null,
+      "igst": null,
+      "items": [
+        {
+          "name": "charger",
+          "quantity": 1,
+          "rate": 300,
+          "amount": 300
+        }
+      ]
+    }
+  ],
+  "buyerDetails": {
+    "vendorName": "XYZ Pvt Ltd",
+    "address": "5678 Vendor Street, Townsville, State-67890",
+    "contact": "+1-800-555-6789",
+    "email": "sales@xyzpltd.com"
+  },
+  "companyDetails": {
+    "companyName": "ABC Corporation",
+    "companyAddress": "1234 Business Park, Cityville, State-12345",
+    "companyPan": "ABCDE1234F",
+    "contact": "+1-800-555-1234",
+    "email": "contact@abccorp.com"
+  },
+  "bankDetails": {
+    "id": 1,
+    "bankName": "State Bank of India",
+    "bankAccountNumber": "1234567890123456",
+    "ifscCode": "SBIN0001234",
+    "accountHolderName": "John Doe"
+  }
+}

@@ -1,0 +1,352 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0288d1; 
+    padding: 10px;
+    border-radius: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar h2 {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #333;
+}
+
+
+.container {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    padding: 20px;
+    background-image: url('https://img.freepik.com/free-photo/high-angle-payroll-frame-with-copy-space_23-2149103942.jpg?t=st=1731236207~exp=1731239807~hmac=29ab182dd888131c1f1be0b82bb91c22f214b603c452cd402141fcba1036536d&w=1060');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #333;
+    margin-top: 0; 
+    margin-bottom: 0;
+}
+
+
+form {
+    width: 100%;
+    max-width: 800px;
+    padding: 25px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+   
+}
+
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+   
+}
+
+legend {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    // margin: 10px 0 5px;
+    // font-weight: bold;
+   
+    
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0;
+    display: block;
+    flex-direction: row;
+    border-radius: 8px;
+    border: 1px solid #b3e5fc;
+    font-size: 0.9em;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+    border-color: #0288d1;
+    outline: none;
+}
+
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder,
+input[type="number"]::placeholder {
+    font-weight: normal;
+    color: #0288d1;
+}
+
+
+span {
+    color: #d32f2f;
+    font-size: 0.875em;
+    // margin-top: 5px;
+    
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 5px;
+   
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0277bd;
+}
+
+button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #0288d1;
+}
+
+th {
+    color: #333;
+    font-weight: bold;
+    // background-color: #0288d1;
+    color: #333;
+    // width: 100%;
+}
+
+td input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+td button {
+    background-color: #333;
+    color: #e0f7fa;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+   
+}
+
+td button:hover {
+    background-color: #d32f2f;
+}
+
+
+.taxinfo {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.taxinfo {
+    flex: 1;
+}
+
+.taxinfo {
+    font-weight: bold;
+}
+
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-navigation button {
+    // padding: 12px 25px;
+    padding: auto;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.form-navigation button:hover {
+    background-color: #0277bd;
+}
+
+
+.footer {
+    text-align: center;
+    // padding: 20px 0;
+    background-color: #0288d1;
+    color: white;
+    font-size: 1.5em;
+    // border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    // margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+// @media (max-width: 768px) {
+//     .navbar h2 {
+//         font-size: 1em;
+//     }
+
+//     .navbar ul li {
+//      margin: 5px 0;
+//     }
+
+//     .container {
+//         padding: 15px;
+        
+//     }
+
+//     form {
+//         padding: 20px;
+//     }
+
+//     .footer {
+//         padding: 5px;
+//     }
+
+//     .form-navigation button {
+//         font-size: .5em;
+//         padding: 5px 10px;
+//     }
+
+  
+//     .table-wrapper {
+//         overflow-x: auto;
+//     }
+// }
+
+
+@media (max-width: 480px) {
+    .navbar h2 {
+        font-size: 1.2em;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    .footer {
+        padding: 10px;
+    }
+
+    .form-navigation button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto; 
+    }
+
+    .table-wrapper table {
+        font-size: 0.8em; 
+    }
+
+    th, td {
+        padding: 8px; 
+    }
+
+    td button {
+        font-size: 0.8em; 
+        padding: 5px 10px; 
+    }
+}
+
+

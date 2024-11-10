@@ -1,0 +1,292 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.taxinvoice {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  // background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  width: 100%;
+  margin-left: 40px;
+  max-width: 1400px;
+  margin-top: 50px; /* Adjust for navbar height */
+  margin-bottom: 50px; /* Space for footer */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0288d1;
+  padding: 5px 15px;
+  border-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; /* Ensure navbar stays on top */
+}
+
+.navbar h2 {
+  color: #fff;
+  font-size: 1.4em; /* Reduced font size */
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 10px; /* Reduced spacing */
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em; /* Reduced font size */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #333;
+}
+
+.taxinvoice .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px 5px;
+  // background-color: #0288d1;
+  color:black;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 15px; /* Reduced margin */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.taxinvoice .header img {
+  height: 40px; /* Reduced size */
+}
+
+.taxinvoice .header h1 {
+  font-size: 1.6em; /* Reduced font size */
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.taxinvoice strong {
+  // color: #0288d1;
+  font-size: 1em; /* Reduced font size */
+  margin-bottom: 8px; /* Reduced margin */
+}
+
+.taxinvoice .details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.taxinvoice .companyDetails, .taxinvoice .vendorDetails {
+  width: 48%;
+  padding: 10px;
+  // background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.taxinvoice .companyDetails p, .taxinvoice .vendorDetails p {
+  margin: 3px 0; /* Reduced margin */
+}
+
+.taxinvoice .companyDetails span, .taxinvoice .vendorDetails span {
+  // font-weight: bold;
+  color: #333;
+}
+
+.taxinvoice .invoice-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px; /* Reduced margin */
+  // background-color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.taxinvoice .invoice-details .details {
+  font-size: 1em; /* Reduced font size */
+  // font-weight: bold;
+}
+
+.taxinvoice .invoice-details .number p,
+.taxinvoice .invoice-details .dates p {
+  margin: 3px 0; /* Reduced margin */
+}
+
+.taxinvoice .invoice-details span {
+  color: #333;
+  // font-weight: bold;
+}
+
+.taxinvoice .Invoicetable,
+.taxinvoice .amounttable {
+  margin-bottom: 20px; /* Reduced margin */
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.taxinvoice .Invoicetable table, .taxinvoice .amounttable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.taxinvoice .Invoicetable th, .taxinvoice .Invoicetable td,
+.taxinvoice .amounttable th, .taxinvoice .amounttable td {
+  padding: 8px 12px; /* Reduced padding */
+  text-align: left;
+  border: 1px solid #0288d1;
+}
+
+.taxinvoice .Invoicetable th, .taxinvoice .amounttable th {
+  // background-color: #0288d1;
+  color:#333;
+  // background: linear-gradient(135deg, #0288d1, #0297d5); /* Light shade for headings */
+}
+
+// .taxinvoice .Invoicetable td, .taxinvoice .amounttable td {
+//   // background-color: #f9f9f9;
+// }
+
+.taxinvoice .amounttable th[colspan] {
+  text-align: center;
+}
+
+.taxinvoice .bankDetails {
+  padding: 10px 15px; /* Reduced padding */
+  // background-color: white; // background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Reduced margin */
+}
+
+.taxinvoice .bankDetails p {
+  margin: 3px 0; /* Reduced margin */
+}
+
+.taxinvoice .bankDetails span {
+  // font-weight: bold;
+  color: #333;
+}
+
+.taxinvoice .edit {
+  text-align: right;
+}
+
+.taxinvoice .edit input[type="button"] {
+  padding: 8px 16px; /* Reduced padding */
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em; /* Reduced font size */
+  transition: background-color 0.3s;
+}
+
+.taxinvoice .edit input[type="button"]:hover {
+  background-color: #0277bd;
+}
+
+.footer {
+  text-align: center;
+  background-color: #0288d1;
+  color: white;
+  font-size: 1em; /* Reduced font size */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .taxinvoice {
+    padding: 10px;
+  }
+
+  .navbar h2 {
+    font-size: 1.2em;
+}
+
+.navbar ul li {
+    margin: 5px 0;
+}
+
+  .taxinvoice .header {
+    // flex-direction: column;
+    text-align: center;
+    padding: 5px 15px;
+  }
+
+  .taxinvoice .details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .taxinvoice .companyDetails, .taxinvoice .vendorDetails {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .taxinvoice .invoice-details {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .taxinvoice .Invoicetable table,
+  .taxinvoice .amounttable table {
+    font-size: 0.85em; /* Slightly reduced font size */
+  }
+
+  .taxinvoice .edit {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .taxinvoice .header h1 {
+    font-size: 1.2em; /* Reduced font size */
+  }
+
+  .taxinvoice .companyDetails, .taxinvoice .vendorDetails,
+  .taxinvoice .invoice-details {
+    padding: 8px;
+  }
+
+  .taxinvoice .Invoicetable table,
+  .taxinvoice .amounttable table {
+    font-size: 0.75em; /* Reduced font size */
+  }
+
+  .taxinvoice .edit input[type="button"] {
+    width: 100%;
+    padding: 10px 0;
+  }
+}

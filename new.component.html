@@ -1,0 +1,124 @@
+<div class="page-wrapper">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img src="path/to/logo.png" alt="Website Logo" class="logo">
+      </div>
+      <div class="navbar-center">
+        <h2>Invoice Management System</h2>
+      </div>
+      <div class="navbar-right">
+        <ul class="navbar-tabs">
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Vendor</a></li>
+          <li><a href="#">Invoice</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <div class="container">
+      <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+        <div class="details">
+          <!-- Invoice Details -->
+          <fieldset class="invoiceDetails" *ngIf="currentStep === 1">
+            <legend>Invoice Details</legend>
+            <label for="invoiceNumber">Invoice Number:</label>
+            <input type="text" formControlName="invoiceNumber" placeholder="Enter invoice number">
+            <div *ngIf="invoiceForm.controls['invoiceNumber'].touched && invoiceForm.controls['invoiceNumber'].errors?.['required']">
+              <span>This is required</span>
+            </div>
+            <div *ngIf="invoiceForm.controls['invoiceNumber'].errors?.['positive']">
+              <span>Invoice Number should be positive.</span>
+            </div>
+            <div *ngIf="invoiceForm.controls['invoiceNumber'].errors?.['pattern']">
+              <span>Invoice Number should be a valid number (only digits and dashes allowed).</span>
+            </div>
+  
+            <label for="invoiceDate">Invoice Date:</label>
+            <input type="date" formControlName="invoiceDate" placeholder="Select invoice date">
+            <div *ngIf="invoiceForm.controls['invoiceDate'].touched && invoiceForm.controls['invoiceDate'].errors?.['required']">
+              <span>This is required</span>
+            </div>
+  
+            <label for="paymentDueDate">Payment Due Date:</label>
+            <input type="date" formControlName="paymentDueDate" placeholder="Select payment due date">
+            <div *ngIf="invoiceForm.controls['paymentDueDate'].touched && invoiceForm.controls['paymentDueDate'].errors?.['required']">
+              <span>This is required</span>
+            </div>
+          </fieldset>
+  
+          <!-- Reference Details -->
+          <fieldset class="referenceDetails" *ngIf="currentStep === 2">
+            <legend>Reference Details</legend>
+            <label for="referenceNumber">Reference Number:</label>
+            <input type="text" formControlName="referenceNumber" placeholder="Enter reference number">
+            <div *ngIf="invoiceForm.controls['referenceNumber'].touched && invoiceForm.controls['referenceNumber'].errors?.['pattern']">
+              <span>Reference Number should be a valid number (only digits).</span>
+            </div>
+  
+            <label for="referenceDate">Reference Date:</label>
+            <input type="date" formControlName="referenceDate" placeholder="Select reference date">
+          </fieldset>
+  
+          <!-- Tax Details -->
+          <fieldset class="tax" *ngIf="currentStep===3">
+            <legend>Tax Details</legend>
+            <label for="gst">GST:</label>
+            <input type="number" formControlName="gst" placeholder="Enter GST amount">
+            <div *ngIf="invoiceForm.controls['gst'].touched && invoiceForm.controls['gst'].errors?.['required']">
+              <span>This is required</span>
+            </div>
+  
+            <label for="cgst">CGST:</label>
+            <input type="number" formControlName="cgst" placeholder="Enter CGST amount">
+  
+            <label for="igst">IGST:</label>
+            <input type="number" formControlName="igst" placeholder="Enter IGST amount">
+  
+            <label for="sgst">SGST:</label>
+            <input type="number" formControlName="sgst" placeholder="Enter SGST amount">
+          </fieldset>
+  
+          <!-- Items -->
+          <fieldset class="items" *ngIf="currentStep===4">
+            <legend>Items</legend>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody formArrayName="items">
+                  <tr *ngFor="let item of items.controls; let i = index" [formGroupName]="i">
+                    <td><input type="text" formControlName="name" placeholder="Item name"></td>
+                    <td><input type="number" formControlName="quantity" placeholder="Quantity"></td>
+                    <td><input type="number" formControlName="rate" placeholder="Rate"></td>
+                    <td><input type="number" formControlName="amount" placeholder="Amount"></td>
+                    <td><input type="number" formControlName="total" placeholder="Total" [readonly]="true"></td>
+                    <td><button type="button" (click)="removeItem(i)">Remove</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button type="button" (click)="addItem()">Add Item</button>
+          </fieldset>
+        </div>
+  
+        <div class="form-navigation">
+          <button type="button" (click)="goBack()" [disabled]="currentStep === 1">Back</button>
+          <button type="button" *ngIf="currentStep < 4" (click)="goForward()" [disabled]="currentStep === 4">Next</button>
+          <button type="button" *ngIf="currentStep === 4" (click)="onSubmit()" [disabled]="invoiceForm.invalid">Submit</button>
+        </div>
+      </form>
+    </div>
+  
+    <div class="footer">
+      <p>&copy; 2024 Invoice Management App. All rights reserved.</p>
+    </div>
+  </div>
+  
